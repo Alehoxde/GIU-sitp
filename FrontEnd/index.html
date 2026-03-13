@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<title>SITP Map</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraderos SITP Puente Aranda</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <h1 class=> Paraderos SITP - Puente Aranda</h1> 
+    
+    <div class="welcome-section">
+        <div class="welcome-content">
+            <h2>Bienvenido al Sistema de Consulta para tus rutas </h2>
+            <p>Encuentra todos los paraderos del SITP en la localidad de Puente Aranda</p>
+            
+            <div class="image-container">
+                <img src="https://www.puentearanda.gov.co/sites/puentearanda.gov.co/files/localidad/mapas/plano-local_0.png" 
+                     alt="Bus SITP" 
+                     class="welcome-image"
+                     onerror="this.src='https://via.placeholder.com/600x400?text=SITP+Bogotá'">
+            </div>
+            
+            <button id="toggleMapBtn" class="btn-primary"> Ver Mapa de Paraderos</button>
+            
+            <div class="info-box">
+                <h3> Información</h3>
+                <p><strong>Localidad:</strong> Puente Aranda (Localidad 16)</p>
+                <p><strong>Total paraderos:</strong> <span id="paraderoCount">Cargando...</span></p>
+            </div>
+        </div>
+    </div>
 
-<h2>Mapa SITP Bogotá</h2>
+    <div id="map-container" class="map-hidden">
+        <div id="map"></div>
+    </div>
 
-<select id="localidad">
-<option value="">Seleccione localidad</option>
-<option value="PUENTE ARANDA">Puente Aranda</option>
-<option value="KENNEDY">Kennedy</option>
-</select>
-
-<div id="map"></div>
-
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="program.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

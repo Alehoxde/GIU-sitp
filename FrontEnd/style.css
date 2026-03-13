@@ -1,10 +1,147 @@
-body{
-font-family: Arial;
-text-align:center;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
 }
 
-#map{
-height:500px;
-width:80%;
-margin:auto;
+.main-title {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Sección de bienvenida */
+.welcome-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.welcome-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.welcome-content h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 15px;
+    background: transparent;
+    padding: 0;
+}
+
+.welcome-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.image-container {
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.welcome-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.btn-primary {
+    background: #ffd700;
+    color: #2c3e50;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    background: #ffed4a;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.info-box {
+    background: rgba(175, 78, 78, 0.2);
+    padding: 8px 15px;      /* Reducido: antes tenías 11px */
+    border-radius: 4px;     /* Un poco más redondeado para suavizar */
+    margin-top: 15px;       /* Reducido a la mitad: antes 30px */
+    backdrop-filter: blur(5px);
+    display: inline-block;  /* Ajusta el ancho al contenido, no a toda la pantalla */
+}
+
+
+.info-box h3 {
+    color: white;
+    margin-bottom: 1px;
+    font-size: 1px;
+}
+
+.info-box p {
+    margin: 5px 0;          /* Espacio entre textos mínimo */
+    font-size: 14px;        /* Un poco más pequeña para ahorrar espacio */
+}
+
+/* Contenedor del mapa */
+#map-container {
+    width: 100%;
+    transition: height 0.5s ease-out;
+    overflow: hidden;
+}
+
+#map-container.map-hidden {
+    height: 0;
+}
+
+#map-container.map-visible {
+    height: 600px;
+    width: 50%;
+    margin: auto;
+}
+
+/* Tu estilo original del mapa */
+#map {
+    height: 600px;
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 20px;
+    }
+    
+    .welcome-content h2 {
+        font-size: 22px;
+    }
+    
+    .welcome-content p {
+        font-size: 16px;
+    }
+    
+    .btn-primary {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    #map-container.map-visible {
+        height: 400px;
+    }
+    
+    #map {
+        height: 400px;
+    }
 }
